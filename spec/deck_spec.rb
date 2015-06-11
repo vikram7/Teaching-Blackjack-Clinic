@@ -13,6 +13,7 @@ RSpec.describe Deck do
     end
 
     it "generates 52 unique cards for the deck" do
+      mapped_cards = deck.cards.map!{|card| "#{card.rank} of #{card.suit}"}
       expect(deck.cards.uniq.count).to eq(52)
     end
 
